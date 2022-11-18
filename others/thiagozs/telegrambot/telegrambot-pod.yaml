@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: telegrambot-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: telegrambot
+      labels:
+        app: telegrambot
+    spec:
+      containers:
+        - name: telegrambot-container
+          image: thiagozs/go-telegrambot:v1.0.1
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: mongo-configmap
+      imagePullSecrets:
+        - name: regcred
+  selector:
+    matchLabels:
+      app: telegrambot

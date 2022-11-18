@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: mongo-configmap
+data: 
+    TOKEN_TELEGRAM_BOT: ""
+    TMP_FOLDER: "/tmp"
+    MGO_HOSTNAME: "mongodb"
+    MGO_PORT: "27017"
+    MGO_DATABASE: ""
+    MGO_COLLECTION: ""
+    MGO_USERNAME: ""
+    MGO_PASSWORD: ""
